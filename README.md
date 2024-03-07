@@ -55,11 +55,10 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
-``
-NAME- RICHARDSON A
-Department - AIDS
-REG.NO- 212222233005
-``
+### NAME- RICHARDSON A
+### Department - AIDS
+### REG.NO- 212222233005
+
 
 ```
 const int trigpin=10;
