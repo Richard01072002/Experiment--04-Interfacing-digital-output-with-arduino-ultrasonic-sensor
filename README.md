@@ -37,7 +37,7 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 ### FIGURE 01 CIRCUIT OF INTERFACING ULTRASONIC SENSOR 
 
 
-![image](https://user-images.githubusercontent.com/36288975/166430594-5adb4ca9-5a42-4781-a7e6-7236b3766a85.png)
+![image](https://github.com/Richard01072002/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/141472248/5243fe21-19bb-4f55-9848-d8d48988396e)
 
 
 
@@ -55,25 +55,70 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 
 
 ### PROGRAM 
+``
+NAME- RICHARDSON A
+Department - AIDS
+REG.NO- 212222233005
+``
 
+```
+const int trigpin=10;
+const int echopin=9;
+int red=7;
+int green=6;
+long duration;
+float distance;
 
+void setup()
+{
+  pinMode(trigpin, OUTPUT);
+  pinMode(echopin, INPUT);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  Serial.begin(9600);
+}
 
+void loop()
+{
+  digitalWrite(trigpin, LOW);
+  delay(20); // Wait for 1000 millisecond(s)
+  digitalWrite(trigpin, HIGH);
+  delay(20); 
+  digitalWrite(trigpin, LOW);
+  duration=pulseIn(echopin,HIGH);
+  distance=duration*0.034/2;
+  Serial.println(distance);
+  Serial.println("cm");
+  
+  if(distance>5)
+  {
+	digitalWrite(red, HIGH);
+  delay(200);
+    digitalWrite(red, LOW);
+  delay(200);
+  }
+  else
+  {
+	digitalWrite(green, HIGH);
+  delay(200);
+    digitalWrite(green, LOW);
+  delay(200);
+  }
+}
+```
 
+### CIRCUIT DIAGRAM 
+![image](https://github.com/Richard01072002/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/141472248/4dd656ac-d9b3-446f-9689-cd81ce7c3ab0)
 
 
 ### Distance vs measurement table 
 
-			
- 
-			
-			
-			
+#### TABLE
+![image](https://github.com/Richard01072002/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/141472248/27298389-fc5f-41ff-afa0-78082f35ccb2)
 
-![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
+#### GRAPH 📈
+![image](https://github.com/Richard01072002/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/141472248/1c8a37b5-a5a0-4a15-950f-826eb176e2c5)
 
-			
-			
-			
 			
 			
 			Average error = sum/ number of readings 
