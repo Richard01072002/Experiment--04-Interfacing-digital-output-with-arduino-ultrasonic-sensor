@@ -106,7 +106,7 @@ void loop()
 }
 ```
 
-### CIRCUIT DIAGRAM 
+### Schematic Diagram 
 ![image](https://github.com/Richard01072002/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/141472248/4dd656ac-d9b3-446f-9689-cd81ce7c3ab0)
 
 
